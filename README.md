@@ -1,3 +1,3 @@
-# angular-lreni5
+# ng-mat-select-infinite-scroll-example
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-lreni5)
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/ng-mat-select-infinite-scroll)
