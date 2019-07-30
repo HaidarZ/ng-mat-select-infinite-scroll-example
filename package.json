@@ -13,7 +13,7 @@
     "@angular/platform-browser": "~7.2.6",
     "@angular/platform-browser-dynamic": "~7.2.6",
     "@angular/router": "~7.2.6",
-    "ng-mat-select-infinite-scroll":"~1.0.1",
+    "ng-mat-select-infinite-scroll":"~1.1.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
