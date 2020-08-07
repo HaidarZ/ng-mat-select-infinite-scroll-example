@@ -3,35 +3,35 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {scan} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Angular Material Select Infinite Scroll';
-  total = 100;
-  data = Array.from({length: this.total}).map((_, i) => `Option ${i}`);
-  limit = 10;
-  offset = 0;
-  options = new BehaviorSubject<string[]>([]);
-  options$: Observable<string[]>;
+    title = 'Angular Material Select Infinite Scroll';
+    total = 100;
+    data = Array.from({length: this.total}).map((_, i) => `Option ${i}`);
+    limit = 10;
+    offset = 0;
+    options = new BehaviorSubject<string[]>([]);
+    options$: Observable<string[]>;
 
-  constructor() {
-    this.options$ = this.options.asObservable().pipe(
-      scan((acc, curr) => {
-        return [...acc, ...curr];
-      }, [])
-    );
-  }
+    constructor() {
+        this.options$ = this.options.asObservable().pipe(
+            scan((acc, curr) => {
+                return [...acc, ...curr];
+            }, [])
+        );
+    }
 
-  ngOnInit() {
-    this.getNextBatch();
-  }
+    ngOnInit() {
+        this.getNextBatch();
+    }
 
-  getNextBatch() {
-    const result = this.data.slice(this.offset, this.offset + this.limit);
-    this.options.next(result);
-    this.offset += this.limit;
-  }
+    getNextBatch() {
+        const result = this.data.slice(this.offset, this.offset + this.limit);
+        this.options.next(result);
+        this.offset += this.limit;
+    }
 
 }
